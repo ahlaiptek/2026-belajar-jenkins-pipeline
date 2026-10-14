@@ -2,15 +2,11 @@ pipeline {
     agent any
 
     stages {
-        stage('Start') {
-            steps {
-                echo 'Starting...'
-            }
-        }
         stage('Check Environment') {
             steps {
-                echo 'Checking Podman...'
                 sh 'podman --version'
+                sh 'docker --version'
+                sh 'docker-compose --version'
             }
         }
         stage('Test') {
