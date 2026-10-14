@@ -2,12 +2,12 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Start') {
             steps {
-                echo 'Building...'
+                echo 'Starting...'
             }
         }
-        stage('Podman Check') {
+        stage('Check Environment') {
             steps {
                 echo 'Checking Podman...'
                 sh 'podman --version'
@@ -18,9 +18,9 @@ pipeline {
                 echo 'Testing...'
             }
         }
-        stage('Deploy') {
+        stage('End') {
             steps {
-                echo 'Deploying...'
+                echo 'Ending...'
             }
         }
     }
