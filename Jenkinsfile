@@ -7,6 +7,12 @@ pipeline {
                 echo 'Building...'
             }
         }
+        stage('Podman Check') {
+            steps {
+                echo 'Checking Podman...'
+                sh 'podman --version'
+            }
+        }
         stage('Test') {
             steps {
                 echo 'Testing...'
