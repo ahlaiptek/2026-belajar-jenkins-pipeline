@@ -9,6 +9,7 @@ COPY . .
 # jadi tidak perlu dijalankan lagi saat container berjalan
 RUN bun --version
 RUN bun install
+RUN bun run build
 
 EXPOSE 3000
-CMD ["bun", "--version"]
+CMD ["bun", "run", "start"]
